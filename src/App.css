@@ -20,16 +20,16 @@
 
 @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+	transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+	transform: rotate(360deg);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+	animation: logo-spin infinite 20s linear;
   }
 }
 
@@ -84,14 +84,14 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+	color: #213547;
+	background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+	color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+	background-color: #f9f9f9;
   }
 }
 
