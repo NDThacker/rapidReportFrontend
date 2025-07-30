@@ -52,7 +52,6 @@ export const getArticleByTitle = async (title, nextPage = "") => {
 	const serverUrl = getServerUrl();
 	let url = `${serverUrl}/latest`;
 	if (nextPage != "") url += `&nextPage=${nextPage}`;
-
 	try {
 		const response = await axios.get(
 			url,
@@ -71,7 +70,6 @@ export const getArticleByCategory = async (category, nextPage = "") => {
 	const serverUrl = getServerUrl();
 	let url = `${serverUrl}/latest`;
 	if (nextPage != "") url += `&nextPage=${nextPage}`;
-
 	try {
 		const response = await axios.get(
 			url,
