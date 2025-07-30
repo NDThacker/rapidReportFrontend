@@ -15,10 +15,11 @@ const getServerUrl = () => {
 	return serverUrl;
 };
 
-export const getNewsArticles = async () => {
+export const getNewsArticles = async (nextPage = "") => {
 	const headers = setHeaders(import.meta.env.VITE_API_KEY);
 	const serverUrl = getServerUrl();
-	const url = `${serverUrl}/latest`;
+	let url = `${serverUrl}/latest?language=en`;
+	if (nextPage != "") url += `&nextPage=${nextPage}`;
 	try {
 		const response = await axios.get(url, { headers });
 		return response.data;
@@ -28,10 +29,11 @@ export const getNewsArticles = async () => {
 	}
 };
 
-export const getMatchingNewsArticles = async (query = "") => {
+export const getMatchingNewsArticles = async (query = "", nextPage = "") => {
 	const headers = setHeaders(import.meta.env.VITE_API_KEY);
 	const serverUrl = getServerUrl();
-	const url = `${serverUrl}/latest`;
+	let url = `${serverUrl}/latest`;
+	if (nextPage != "") url += `&nextPage=${nextPage}`;
 	try {
 		const response = await axios.get(
 			url,
@@ -45,13 +47,11 @@ export const getMatchingNewsArticles = async (query = "") => {
 	}
 };
 
-export const getArticleByTitle = async (title) => {
-	const headers = setHeaders(
-		import.meta.env.VITE_API_KEY,
-		import.meta.env.VITE_USER_AGENT
-	);
+export const getArticleByTitle = async (title, nextPage = "") => {
+	const headers = setHeaders(import.meta.env.VITE_API_KEY);
 	const serverUrl = getServerUrl();
-	const url = `${serverUrl}/latest`;
+	let url = `${serverUrl}/latest`;
+	if (nextPage != "") url += `&nextPage=${nextPage}`;
 
 	try {
 		const response = await axios.get(
@@ -66,13 +66,11 @@ export const getArticleByTitle = async (title) => {
 	}
 };
 
-export const getArticleByCategory = async (category) => {
-	const headers = setHeaders(
-		import.meta.env.VITE_API_KEY,
-		import.meta.env.VITE_USER_AGENT
-	);
+export const getArticleByCategory = async (category, nextPage = "") => {
+	const headers = setHeaders(import.meta.env.VITE_API_KEY);
 	const serverUrl = getServerUrl();
-	const url = `${serverUrl}/latest`;
+	let url = `${serverUrl}/latest`;
+	if (nextPage != "") url += `&nextPage=${nextPage}`;
 
 	try {
 		const response = await axios.get(
